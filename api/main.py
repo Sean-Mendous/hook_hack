@@ -22,10 +22,7 @@ class PromptRequest(BaseModel):
 
 @app.post("/scrape-list")
 def fastapi_scrape_list(req: PromptRequest):
-    demo = req.input["demo"]
-    searchword = req.input["searchword"]
-    amount = req.input["amount"]
-
+    demo = req.input.get("demo")
     if demo:
         result = [
             {
@@ -106,6 +103,8 @@ def fastapi_scrape_list(req: PromptRequest):
         ]
     else:
         try:
+            searchword = req.input["searchword"]
+            amount = req.input["amount"]
             from app.scrape.list.logic import run_flow
             result = run_flow(searchword, amount)
         except Exception as e:
@@ -115,10 +114,7 @@ def fastapi_scrape_list(req: PromptRequest):
 
 @app.post("/scrape-indivisual")
 def fastapi_scrape_indivisual(req: PromptRequest):
-    demo = req.input["demo"]
-    url = req.input["url"]
-    amount = req.input["amount"]
-
+    demo = req.input.get("demo")
     if demo:
         result = {
             "comments": [
@@ -221,7 +217,9 @@ def fastapi_scrape_indivisual(req: PromptRequest):
             }
         }
     else:
-        try:    
+        try:
+            url = req.input["url"]
+            amount = req.input["amount"]
             from app.scrape.indivisual.logic import run_flow
             result = run_flow(url, amount)
         except Exception as e:
@@ -231,15 +229,17 @@ def fastapi_scrape_indivisual(req: PromptRequest):
 
 @app.post("/generate-hook")
 def fastapi_generate_hook(req: PromptRequest):
-    demo = req.input["demo"]
+    demo = req.input.get("demo")
     if demo:
         result = """
 This is a DEMO DATA.
 """
     else:
         try:
+            comment = req.input["comment"]
+            user_info = req.input["user_info"]
             from app.generate.hook.logic import run_flow
-            result = run_flow(req.input)
+            result = run_flow(comment, user_info)
         except Exception as e:
             return JSONResponse(status_code=400, content={"success": False, "error": str(e)})
 
@@ -247,15 +247,17 @@ This is a DEMO DATA.
 
 @app.post("/generate-content")
 def fastapi_generate_content(req: PromptRequest):
-    demo = req.input["demo"]
+    demo = req.input.get("demo")
     if demo:
         result = """
 This is a DEMO DATA.
 """
     else:
         try:
+            hook = req.input["hook"]
+            user_info = req.input["user_info"]
             from app.generate.content.logic import run_flow
-            result = run_flow(req.input)
+            result = run_flow(hook, user_info)
         except Exception as e:
             return JSONResponse(status_code=400, content={"success": False, "error": str(e)})
 
