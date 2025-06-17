@@ -2,11 +2,11 @@ import os
 import json
 from app.logger_setting.logger import logger
 
-def run_flow(search_word, amount=15, file_path='app/logs/outputs/video_urls.json'):
+def run_flow(searchword, amount=15):
     try:
-        logger.info(f"extracting urls: {search_word}")
-        from app.scrape.list.extract.extract import extract
-        result = extract(search_word)
+        logger.info(f"extracting urls: {searchword}")
+        from app.scrape.list.extract.extract import extract_playwrite
+        result = extract_playwrite(searchword)
         logger.info(f"success extracting urls: {len(result)}")
     except Exception as e:
         raise RuntimeError(f"extracting urls: {e}")
