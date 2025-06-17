@@ -1,0 +1,70 @@
+{
+    "generated_content": [
+        {
+            "scene": 1,
+            "sec": 0,
+            "structure": "hook",
+            "caption": "「サッカー部なのに、焼けないって最高！」",
+            "visual_info": "明るい運動場でサッカーを楽しむ女子高生たちのシーン。",
+            "visual_movement": "カメラはプレイヤーたちを追いかけ、笑顔でボールをパスする様子をズームイン。",
+            "visual_method": "元気で楽しい雰囲気を伝えるためにスローモーションを使用。",
+            "visual_prompt": "楽しそうにスポーツをする女子高生たち。",
+            "proof": "フック案より引用。"
+        },
+        {
+            "scene": 2,
+            "sec": 5,
+            "structure": "problem",
+            "caption": "「日焼けが気になってスポーツを思い切り楽しめない...」",
+            "visual_info": "日差しを気にして陰に隠れる女子高生のシーン。",
+            "visual_movement": "日差しの強さを表現し、顔をしかめる様子をクローズアップ。",
+            "visual_method": "表情を強調するためにアップショットを使用。",
+            "visual_prompt": "日焼けを心配する様子。",
+            "proof": "ターゲット情報からの課題提起。"
+        },
+        {
+            "scene": 3,
+            "sec": 10,
+            "structure": "solve",
+            "caption": "「SUNVEIL UVバリアミルクで、紫外線を徹底カット！」",
+            "visual_info": "製品を手に持ち微笑む女子高生。",
+            "visual_movement": "製品ボトルをカメラに向かって見せる。",
+            "visual_method": "製品の特徴、SPF50+ PA++++をテキストで強調。",
+            "visual_prompt": "自信満々で製品を紹介。",
+            "proof": "商品情報より引用。"
+        },
+        {
+            "scene": 4,
+            "sec": 15,
+            "structure": "solve",
+            "caption": "「ウォータープルーフで、汗にも水にも強い！」",
+            "visual_info": "女子高生が汗をかきながらプレイを続ける。",
+            "visual_movement": "汗を気にせず元気に走るシーン。",
+            "visual_method": "汗を拭く仕草をスローモーションで。",
+            "visual_prompt": "汗に負けない様子。",
+            "proof": "商品情報より引用。"
+        },
+        {
+            "scene": 5,
+            "sec": 20,
+            "structure": "solve",
+            "caption": "「素肌感のある透明仕上げだから、メイクの下地にも！」",
+            "visual_info": "友達と談笑しながら、鏡を見る女子高生。",
+            "visual_movement": "笑顔で自分の肌を触る。",
+            "visual_method": "透明感を強調するためのフィルター使用。",
+            "visual_prompt": "自然な美しさ。",
+            "proof": "商品情報より引用。"
+        },
+        {
+            "scene": 6,
+            "sec": 25,
+            "structure": "cta",
+            "caption": "「今すぐ試して、外でも焼けない安心を手に入れよう！」",
+            "visual_info": "画面にテキストで価格と購入ボタンを表示。",
+            "visual_movement": "画面全体に明るいエフェクトが広がる。",
+            "visual_method": "ナレーションで購入を促すアナウンス。",
+            "visual_prompt": "行動を促すための明るい音楽。",
+            "proof": "商品情報の価格とマーケティング情報からの抜粋。"
+        }
+    ]
+}
