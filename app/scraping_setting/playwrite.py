@@ -15,12 +15,7 @@ def logout(browser, cookie_path='app/scraping_setting/cookies.json'):
     context.storage_state(path=cookie_path)
     browser.close()
 
-def action(page, max_attempts=50, same_height_threshold=3):
-    scroll_page_human_like(page, max_attempts, same_height_threshold)
-    html = page.content()
-    return html
-
-def scroll_page_human_like(page, max_attempts=50, same_height_threshold=3):
+def scroll_page_human_like(page, max_attempts, same_height_threshold):
     same_height_count = 0
     last_height = page.evaluate("document.body.scrollHeight")
 
@@ -40,3 +35,8 @@ def scroll_page_human_like(page, max_attempts=50, same_height_threshold=3):
 
         if same_height_count >= same_height_threshold:
             break
+
+        print(f"attempt: {attempt}")
+    
+    html = page.content()
+    return html

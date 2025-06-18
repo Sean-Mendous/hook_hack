@@ -45,8 +45,8 @@ def extract_playwrite(search_word, cookie_path='app/scraping_setting/cookies.jso
         time.sleep(5)
         
         try:
-            from app.scraping_setting.playwrite import action
-            html = action(page, max_attempts=50, same_height_threshold=3)
+            from app.scraping_setting.playwrite import scroll_page_human_like   
+            html = scroll_page_human_like(page, max_attempts=50, same_height_threshold=5)
         except Exception as e:
             raise RuntimeError(f"get html: {e}")
         
