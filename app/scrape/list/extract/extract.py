@@ -39,6 +39,7 @@ def extract_playwrite(search_word, cookie_path='app/scraping_setting/cookies.jso
         try:
             browser, page = open_url(url, p)
             login(browser, cookie_path)
+            print(f"login success")
         except Exception as e:
             raise RuntimeError(f"open browser: {e}")
         
@@ -47,17 +48,20 @@ def extract_playwrite(search_word, cookie_path='app/scraping_setting/cookies.jso
         try:
             from app.scraping_setting.playwrite import scroll_page_human_like   
             html = scroll_page_human_like(page, max_attempts=50, same_height_threshold=5)
+            print(f"scroll success")
         except Exception as e:
             raise RuntimeError(f"get html: {e}")
         
         try:
             logout(browser, cookie_path)
+            print(f"logout success")
         except Exception as e:
             raise RuntimeError(f"close browser: {e}")
         
     try:
         from app.scrape.list.extract.pattern import pattern
         result = pattern(html)
+        print(f"extract success")
     except Exception as e:
         raise RuntimeError(f"extract comments: {e}")
     
