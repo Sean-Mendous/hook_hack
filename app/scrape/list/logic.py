@@ -46,8 +46,11 @@ def run_flow(input):
 
 if __name__ == "__main__":
     import json
-    search_word = '日焼け止め'
-    result = run_flow(search_word)
+    input = {
+        "searchword": "日焼け止め",
+        "amount": 10
+    }
+    result = run_flow(input)
     print(json.dumps(result, indent=4, ensure_ascii=False))
 
 """
