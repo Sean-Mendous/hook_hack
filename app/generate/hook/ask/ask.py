@@ -1,6 +1,6 @@
 import json
 
-def analyse(comment, video_summary, user_info):
+def ask(comment, video_summary, user_info):
     try:
         with open("app/generate/hook/ask/prompt.md", "r") as f:
             prompt = f.read()
@@ -25,7 +25,7 @@ def analyse(comment, video_summary, user_info):
 if __name__ == "__main__":
     comment = "女子サッカー部の者です。左のやつ時間置いて2回塗るとまじで焼けないです。アネッサと比較しても肌に優しいしコスパが良すぎます。毎日太陽にさらされてるのに肌白いと褒めていただけるので本当にオススメします"
     video_summary = "日焼け止めを20個試した女性が、顔に塗ると肌が白くなるビオレUVアクアリッチの魅力を伝えている。"
-    result = analyse(comment, video_summary)
+    result = ask(comment, video_summary)
     print(result)
 
 """

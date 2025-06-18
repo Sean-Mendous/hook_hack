@@ -1,6 +1,6 @@
 import json
 
-def analyse(hook, user_info):
+def ask(hook, user_info):
     try:
         with open("app/generate/content/ask/prompt.md", "r") as f:
             prompt = f.read()

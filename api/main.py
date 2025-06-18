@@ -29,10 +29,8 @@ def fastapi_scrape_list(req: PromptRequest):
             result = json.load(f)
     else:
         try:
-            searchword = req.input["searchword"]
-            amount = req.input["amount"]
             from app.scrape.list.logic import run_flow
-            result = run_flow(searchword, amount)
+            result = run_flow(req.input)
         except Exception as e:
             return JSONResponse(status_code=400, content={"success": False, "error": str(e)})
 
@@ -46,10 +44,8 @@ def fastapi_scrape_indivisual(req: PromptRequest):
             result = json.load(f)
     else:
         try:
-            url = req.input["url"]
-            amount = req.input["amount"]
             from app.scrape.indivisual.logic import run_flow
-            result = run_flow(url, amount)
+            result = run_flow(req.input)
         except Exception as e:
             return JSONResponse(status_code=400, content={"success": False, "error": str(e)})
 
@@ -63,10 +59,8 @@ def fastapi_generate_hook(req: PromptRequest):
             result = json.load(f)
     else:
         try:
-            comment = req.input["comment"]
-            user_info = req.input["user_info"]
             from app.generate.hook.logic import run_flow
-            result = run_flow(comment, user_info)
+            result = run_flow(req.input)
         except Exception as e:
             return JSONResponse(status_code=400, content={"success": False, "error": str(e)})
 
@@ -80,10 +74,8 @@ def fastapi_generate_content(req: PromptRequest):
             result = json.load(f)
     else:
         try:
-            hook = req.input["hook"]
-            user_info = req.input["user_info"]
             from app.generate.content.logic import run_flow
-            result = run_flow(hook, user_info)
+            result = run_flow(req.input)
         except Exception as e:
             return JSONResponse(status_code=400, content={"success": False, "error": str(e)})
 
