@@ -2,7 +2,7 @@ import time
 import random
 
 def open_url(url, p):
-    browser = p.chromium.launch(headless="new")
+    browser = p.chromium.launch(headless=True)
     page = browser.new_page()
     page.goto(url)
     return browser, page
