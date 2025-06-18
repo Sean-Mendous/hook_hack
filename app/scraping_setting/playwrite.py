@@ -35,6 +35,8 @@ def scroll_page_human_like(page, max_attempts, same_height_threshold):
 
         if same_height_count >= same_height_threshold:
             break
+
+        print(f"scroll: {attempt}")
     
     html = page.content()
     return html
